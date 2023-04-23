@@ -1,3 +1,4 @@
+
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -24,5 +25,8 @@ plt.plot(x,relu(x), label='ReLU')
 plt.plot(x,leaky_relu(x), label='Leaky ReLU')
 plt.plot(x,elu(x), label='ELU')
 
+plt.title(r'$\frac{1}{1+e^{-x}}$, $tanh$, $max(0,x)$, $max(0.1x,x)$ and $e^{x}-1$ activation functions', fontsize=12)
+plt.xlabel('x')
+plt.ylabel('y')
 plt.legend()
 plt.show()
