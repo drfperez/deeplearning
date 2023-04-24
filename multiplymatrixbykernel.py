@@ -28,7 +28,8 @@ for i in range(matrix.shape[0]):
     for j in range(kernel.shape[1]):
         intermediate_result = np.multiply(matrix[i], kernel[:, j])
         result[i, j] = np.sum(intermediate_result)
-        print("Step {}: Multiply row {} of matrix with column {} of kernel: {}".format(i * kernel.shape[1] + j + 1, i+1, j+1, intermediate_result))
+        print("Step {}: Multiply row {} of matrix with column {} of kernel: {}".format(i * kernel.shape[1] + j + 1, matrix[i], kernel[:, j], intermediate_result))
+        print("Step {}: Add intermediate result to result: {}".format(i * kernel.shape[1] + j + 1, result))
 
 # Display the final result
 print("Result:")
