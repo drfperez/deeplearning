@@ -22,13 +22,12 @@ print("Kernel:")
 print(kernel)
 
 # Perform matrix multiplication
-result = np.dot(matrix, kernel)
-
-# Display intermediate calculation steps
+result = np.zeros((matrix.shape[0], kernel.shape[1]))  # Initialize result matrix with zeros
 print("Intermediate Calculations:")
 for i in range(matrix.shape[0]):
     for j in range(kernel.shape[1]):
         intermediate_result = np.dot(matrix[i], kernel[:, j])
+        result[i, j] = np.sum(intermediate_result)
         print("Step {}: Multiply row {} of matrix with column {} of kernel: {}".format(i * kernel.shape[1] + j + 1, i+1, j+1, intermediate_result))
 
 # Display the final result
